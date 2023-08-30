@@ -128,3 +128,44 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Ignore npm lock file
+package-lock.json
+
+# Compiled files
+dist/
+build/
+*.log
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled SCSS or CSS files
+*.css
+
+# Compiled JavaScript files
+*.js
+
+# Compiled HTML files
+*.html
+
+# Compiled images
+*.jpg
+*.jpeg
+*.png
+*.gif
+
+# Log files
+*.log
+
+# Editor backup files
+*~
+# Ignore yarn lock file
+yarn.lock
