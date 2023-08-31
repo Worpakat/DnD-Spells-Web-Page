@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+// font-family: 'Roboto', sans-serif;
+
+:root {
+    --clr-bg: #333;
+    --clr-dnd-red: #e40712;
+    --clr-header-bg: #12181cff;
+    --clr-spell-lines: #704cd9;
+
+    --btn-size: 25px;
+}
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Side Menu Open-Close Buttun */
+.menu-btn-cta {
+    width: var(--btn-size);
+    height: var(--btn-size);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+
+}
+
+/* Topbar */
+.topbar {
+    background-color: var(--clr-header-bg);
+    color: #fff;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+
+    border-bottom: 2px solid var(--clr-dnd-red);
+    box-shadow: 0 0 0.5em 0.1em #333;
+    z-index: 99;
+
+    .heading-cta {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .logo-cta {
+            width: 50px;
+            height: 50px;
+            img {
+                height: 100%;
+            }
+
+        }
+
+        h1 {
+            color: var(--clr-dnd-red);
+        }
+        
+        @media screen and (max-width: 600px) {
+            gap: 10px;
+        }
+        @media screen and (max-width: 450px) {
+            gap: 0px;
+        }
+        @media screen and (max-width: 400px) {
+            > :first-child, > :last-child{
+                display: none;
+            }
+        }
+        
+    }
+}
+
+/* Sidebar Outer Background */
+.side-bar-outer-bg {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 990;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+
+    @media screen and (min-width: 901px) {
+        display: none;
+    }
+}
+
+/* Apply a basic layout structure */
+.container {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+    min-width: 250px;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+    transition: all 0.3s ease;
+
+    .menu-btn-cta {
+        top: 40px;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #suggestionsList {
+            list-style: none;
+            width: 226px;
+            padding: 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+
+            li {
+                padding: 10px;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+            }
+        }
+    }
+
+    .link-list {
+        list-style: none;
+        overflow-y: auto;
+        flex-grow: 1;
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+
+            a {
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    color: #666;
+                }
+            }
+        }
+    }
+}
+
+/* Main content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-image: url("../images/parchment_bg.jpg");
+    
+    .spell-main-cta {
+        margin: 0 auto;
+        max-width: 900px;
+        min-height: calc(100vh - 120px);
+        background-color: white;
+        box-sizing: border-box;
+        padding: 20px;
+        position: relative;
+        box-shadow: 0 0 0.25em 0.05em #666;
+        
+        header {
+            padding: 10px 0;
+            position: relative;
+            margin-bottom: 20px;
+
+            ::after {
+                content: '';
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-bottom: 3px solid var(--clr-spell-lines);
+            }
+        }
+
+        .spell-content-cta {
+            display: grid;
+            /* Left column takes remaining space, right column is 300px wide */
+            grid-template-columns: 1fr 250px;
+            gap: 40px;
+
+            .left-cta {
+
+                .stats-cta {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-bottom: 20px;
+
+                    & > :nth-child(2), & > :nth-child(5) {
+                        
+                        > :last-child {
+                            img {
+                                width: 16px;
+                                height: 16px;
+                                // display: none;
+                            }
+                        }
+                    }
+
+                    .stat-cell {
+                        font-size: 14px;
+                        flex: 25%;
+                        margin-bottom: 10px;
+
+                        .stat-name {
+                            font-weight: bold;
+                        }
+
+                        @media screen and (max-width: 1080px) {
+                            flex: 33%;
+                        }
+
+                        @media screen and (max-width: 950px) {
+                            flex: 50%;
+                        }
+
+                        @media screen and (max-width: 900px) {
+                            flex: 25%;
+                        }
+
+                        @media screen and (max-width: 820px) {
+                            flex: 33%;
+                        }
+
+                        @media screen and (max-width: 720px) {
+                            flex: 25%;
+                        }
+
+                        @media screen and (max-width: 550px) {
+                            flex: 33%;
+                        }
+
+                        @media screen and (max-width: 420px) {
+                            flex: 50%;
+                        }
+                    }
+
+                   
+                    ::after {
+                        content: '';
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        border-bottom: 2px solid var(--clr-spell-lines);
+
+                    }
+                }
+
+                #spellDesc {
+                    font-size: 12px;
+                    margin-bottom: 20px;
+                }
+
+                .classes-cta {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+
+                    .class {
+                        background-color: white;
+                        font-size: 12px;
+                        padding: 4px 8px;
+                        border: 1px solid #666;
+                        box-shadow: inset 0 0 0.1em 0.1em #ccc;
+                        border-radius: 3px;
+                    }
+                }
+            }
+
+            .right-cta {
+                img {
+                    width: 250px;
+                    // height: px;
+                }
+            }
+
+            // 1024PX WİDTH'E breakpoint koy. Resmi iyice küçültebilirsin, üste veya alta alabilirsin. Dene hangisi
+            // iyiolursa artık
+
+        }
+
+        // Tattered Paper Border
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            bottom: -8px;
+            left: 0px;
+            border-bottom: 28px solid transparent;
+            border-image: url(../images/tattered-paper-border.png) 28 stretch;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .menu-btn-cta {
+        //Both of buttons becomes visible.
+        display: inline;
+    }
+
+    .sidebar {
+        height: calc(100vh);
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: -270px;
+        z-index: 999;
+
+        padding-top: 100px;
+
+        transition: all 0.3s ease;
+    }
+
+    .sidebar.sidebar-open {
+        left: 0px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .main-content {
+        .spell-main-cta {
+            .spell-content-cta {
+                display: grid;
+                /* Left column takes remaining space, right column is 300px wide */
+                grid-template-columns: auto;
+                grid-template-rows: 1fr 250px;
+                gap: 40px;
+
+                .right-cta {
+                    display: inline-block;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+
+}

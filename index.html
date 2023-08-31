@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Spell List</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="menu-btn-cta">
+            <img id="openMenuBtn" src="images/open.svg" alt="">
+        </div>
+        <div class="heading-cta">
+            <div class="logo-cta">
+                <img src="images/d20.ico" alt="d20">
+            </div>
+
+            <h1>DnD 5E Spells</h1>
+
+            <div class="logo-cta">
+                <img src="images/dnd-logo-transparent.png" alt="DnD Logo">
+            </div>
+        </div>
+    </header>
+
+    <div class="side-bar-outer-bg"></div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="menu-btn-cta">
+                <img id="closeMenuBtn" src="images/close.svg" alt="">
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <ul id="suggestionsList"></ul>
+            </div>
+            <ul class="link-list" id="linkList">
+                <!-- Links will be added dynamically using JavaScript -->
+
+            </ul>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="spell-main-cta">
+                <header>
+                    <h2 id="spellName">Spell Name</h2>
+                </header>
+                <div class="spell-content-cta">
+                    <div class="left-cta">
+                        <div class="stats-cta">
+                            <div class="stat-cell">
+                                <p class="stat-name">LEVEL</p>
+                                <p id="level">level</p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">CASTING TIME</p>
+                                <p id="castingTime">casting time <img src="images/ritual.svg" alt="ritual"></p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">RANGE/AREA</p>
+                                <p id="rangeArea">range/area</p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">COMPONENTS</p>
+                                <p id="components">components</p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">DURATION</p>
+                                <p id="duration"><img src="images/concentration.svg" alt="concentration"> duration</p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">SCHOOL</p>
+                                <p id="school">school</p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">ATTACK/SAVE</p>
+                                <p id="attackSave">attack/save</p>
+                            </div>
+                            <div class="stat-cell">
+                                <p class="stat-name">DAMAGE TYPE</p>
+                                <p id="damageTYpe">damage type</p>
+                            </div>
+                        </div>
+                        <div class="description-cta">
+                            <p id="spellDesc">
+                                <span style="font-weight: bold; font-size: 1.5em;">This is a practice portfolio
+                                    project.</span> <br><br>
+                                <span style="font-size: 1.2em;">
+                                    -Consumes spells' data from: <a href="https://www.dnd5eapi.co/api/spells"
+                                        target="_blank"
+                                        rel="noopener noreferrer">"https://www.dnd5eapi.co/api/spells"</a>. Then passes
+                                    to UI.<br><br>
+                                    -For a spell description: "https://www.dnd5eapi.co/api/spells/[spell-index]" E.G:<a
+                                        href="https://www.dnd5eapi.co/api/spells/acid-arrow" target="_blank"
+                                        rel="noopener noreferrer">"https://www.dnd5eapi.co/api/spells/aid"</a><br><br>
+                                    -Fully responsive page.<br><br>
+                                    -Spells inserted to a Trie data structure, for efficient searching
+                                    operations.<br><br>
+                                    -Search bar with auto-completion feature.<br><br>
+                                    -Used API is free: <a href="https://www.dnd5eapi.co/" target="_blank"
+                                        rel="noopener noreferrer">"https://www.dnd5eapi.co/"</a> <br><br>
+                                    -API contains just PHB spells.
+                                </span>
+
+                            </p>
+                        </div>
+                        <div class="classes-cta">
+                        </div>
+                    </div>
+                    <div class="right-cta">
+                        <img id="schoolSymbol" src="images/School_Symbols/abjuration.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="/js/script.js"></script>
+    <script type="module" src="/js/trie_and_search_bar.js"></script>
+    <script type="module" src="/js/api_consuming.js"></script>
+</body>
+
+</html>

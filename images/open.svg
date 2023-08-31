@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="matrix(-5.304194927216, 0, 0, -8.39999961853, 36.070352402067, 36.000013941527)" style="transform-origin: 13.927px 14px;">
+    <path id="Path_3" data-name="Path 3" d="M4.5,18H23.353" transform="translate(0 -4)" stroke-linejoin="round" stroke-width="2" style="fill: rgb(252, 250, 250); stroke: rgb(255, 255, 255);"/>
+    <path id="Path_4" data-name="Path 4" d="M4.5,9H23.353" transform="translate(0)" stroke-linejoin="round" stroke-width="2" style="fill: rgb(252, 250, 250); stroke: rgb(255, 255, 255);"/>
+    <path id="Path_5" data-name="Path 5" d="M4.5,27H23.353" transform="translate(0 -8)" stroke-linejoin="round" stroke-width="2" style="fill: rgb(252, 250, 250); stroke: rgb(255, 255, 255);"/>
+  </g>
+</svg>
