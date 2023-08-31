@@ -9,7 +9,7 @@
 2. Clone project folders to your local machine.
 3. Open Command Prompt
 4. Change directory to project direction.
-5. Run this command to install project dependencies: **"npm install"**. (Without quotation marks.) And hit enter until installing end.
-6. Run this command to start server: **"npm start"**.
+5. Run this command to install project dependencies: **"npm install"**. (Without quotation marks.) And hit enter until installing ends.
+6. Run on of these commands to start server: **"npm start"**  **"npm http-server"**.
 7. Run one of the end points on your browser <br>
 ![Server end points.](images/server_end_points.png)
