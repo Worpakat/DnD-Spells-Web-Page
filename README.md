@@ -12,4 +12,4 @@
 5. Run this command to install project dependencies: **"npm install"**. (Without quotation marks.) And hit enter until installing end.
 6. Run this command to start server: **"npm start"**.
 7. Run one of the end points on your browser <br>
-![Server end points.](images/screenshot.png)
+![Server end points.](images/server_end_points.png)
