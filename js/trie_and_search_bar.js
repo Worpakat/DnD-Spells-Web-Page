@@ -130,9 +130,6 @@ searchInput.addEventListener('input', () => {
     const preSearchTerm = removeNonLetters(searchBar.value.toLowerCase());
     const suggestions = spellsTrie.getAutoCompletions(preSearchTerm);
 
-    if (preSearchTerm.length > 0) suggestionsList.style.display = "block";
-    else suggestionsList.style.display = "none";
-    
     suggestionsList.innerHTML = ''; // Clear previous suggestions
 
     for (let i = 0; i < Math.min(suggestions.length, MAX_SUGGESTIONS); i++) {
@@ -141,6 +138,10 @@ searchInput.addEventListener('input', () => {
         suggestion.dataset.searchKey = suggestions[i].dataset.searchKey;
         suggestionsList.appendChild(suggestion);
     }
+
+    if (suggestionsList.childElementCount > 0) suggestionsList.style.display = "block";
+    else suggestionsList.style.display = "none";
+    //If there is no suggestion, suggestion list should be hidden.
 });
 
 //Event for search input keydown 'Enter'
