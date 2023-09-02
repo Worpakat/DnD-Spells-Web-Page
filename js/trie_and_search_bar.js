@@ -156,7 +156,6 @@ suggestionsList.addEventListener('click', (event) => {
         searchInput.value = event.target.dataset.searchKey;
         searchInput.dispatchEvent(hitEnterEvent); 
         searchInput.value = event.target.innerHTML;
-        console.log("test");
         suggestionsList.innerHTML = ''; // Clear suggestions
     }
 });
